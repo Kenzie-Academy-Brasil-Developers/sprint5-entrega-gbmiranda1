@@ -5,7 +5,6 @@ const userDeleteSelfController = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
     const user = await userDeleteSelfService(id);
-    console.log("oi", user);
     if (!user) {
       return res.status(404).send({ error: "User not found" });
     }
